@@ -11,161 +11,38 @@
       rel="stylesheet"
     />
     <title>About Me</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontSize: {
-              "h-lg": ["56px", "70px"],
-              "h-md": ["40px", "51px"],
-              "h-sm": ["32px", "40px"],
-            },
-            borderRadius: {
-              "4xl": "2rem",
-            },
-            colors: {
-              "galactic-blue": "#755CDE",
-              "summer-yellow": "#F6A560",
-              pink: "#F39E9E",
-              "light-red": "#EB7565",
-              cyan: "#61C4B7",
-              "dark-purple": "#552049",
-              black: "#030303",
-              "medium-brown": "#7A746E",
-              "light-cream": "#FFF7F0",
-            },
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer base {
-        html,
-        body {
-          @apply bg-light-cream text-black;
-          @apply md:text-lg;
-          font-family: "Plus Jakarta Sans", sans-serif;
-        }
-        img {
-          @apply w-full h-auto;
-        }
-        h1 {
-          @apply text-4xl md:text-h-md lg:text-h-lg font-bold;
-        }
-        h2 {
-          @apply text-2xl font-bold md:text-h-sm lg:text-h-md;
-        }
-        body > * {
-          @apply px-4 md:px-8 lg:container mx-auto;
-        }
-      }
-      @layer components {
-        .button {
-          @apply inline-flex items-center px-8 py-2 rounded-4xl text-base font-bold;
-        }
-        .button.bg-black:hover {
-          @apply bg-galactic-blue;
-        }
-        .button.bg-light-red:hover {
-          @apply bg-summer-yellow;
-        }
-        .button.round {
-          @apply rounded-full aspect-square px-4 py-4;
-        }
-        .button.round:hover {
-          @apply bg-galactic-blue;
-        }
-
-        .skills {
-          @apply grid grid-cols-2 gap-4;
-
-          grid-template-areas:
-            "a a"
-            "b c"
-            "d d"
-            "e e"
-            "f f";
-        }
-        @media screen(md) {
-          .skills {
-            @apply grid-cols-4;
-            grid-template-areas:
-              "a a b c"
-              "a a d d"
-              "e e f f";
-          }
-        }
-        @media screen(lg) {
-          .skills {
-            @apply grid-cols-6;
-            grid-template-areas:
-              "a a b c e e"
-              "a a d d f f";
-          }
-        }
-
-        .skill {
-          @apply rounded-lg p-6 flex flex-col;
-        }
-        .skill img {
-          @apply w-1/2 ml-auto;
-        }
-        .skill h3 {
-          @apply font-bold text-2xl mt-auto;
-        }
-
-        .bg-black,
-        .bg-galactic-blue,
-        .bg-summer-yellow,
-        .bg-pink,
-        .bg-light-red,
-        .bg-cyan,
-        .bg-dark-purple {
-          @apply text-light-cream;
-        }
-      }
-      @layer utilities {
-        .full-width {
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/index.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body x-data="{ consult: '/' }" role="main">
-    <!-- header -->
-    <header class="flex justify-between py-4 md:py-8">
-      <!-- logo -->
-      <a href="/" aria-label="Logo" class="w-12">
-        <img src="/logo.svg" alt="Logo" />
-      </a>
-      <!-- consult -->
-      <a :href="consult" class="button bg-black"> Free Consultation </a>
-    </header>
+  <body>
+    <main x-data="{ consult: '/' }">
+      <!-- header -->
+      <header class="flex justify-between py-4 md:py-8">
+        <!-- logo -->
+        <a href="/" aria-label="Logo" class="w-12">
+          <img src="/logo.svg" alt="Logo" />
+        </a>
+        <!-- consult -->
+        <a :href="consult" class="button bg-black"> Free Consultation </a>
+      </header>
 
-    <!-- hero -->
-    <article class="text-center space-y-4 mt-8">
-      <h1 class="text-center space-y-4 mt-8">Design solutions made easy</h1>
+      <!-- hero -->
+      <article class="text-center space-y-4 mt-8">
+        <h1 class="text-center space-y-4 mt-8">Design solutions made easy</h1>
 
-      <p class="text-medium-brown px-10">
-        With over ten years of experience in various design disciplines, I’m
-        your one-stop shop for your design needs.
-      </p>
-    </article>
+        <p class="text-medium-brown px-10">
+          With over ten years of experience in various design disciplines, I’m
+          your one-stop shop for your design needs.
+        </p>
+      </article>
 
-    <!-- skill -->
-    <section class="mt-8">
-      <h2 class="sr-only">Skill</h2>
+      <!-- skill -->
+      <section class="mt-8">
+        <h2 class="sr-only">Skill</h2>
 
-      <div
-        class="skills"
-        x-data="{
+        <div
+          class="skills"
+          x-data="{
           skills: [
             { 
               src: '/visual-1.svg', 
@@ -199,50 +76,52 @@
             },
           ]
         }"
-      >
-        <template x-for="skill in skills">
-          <div :class="['skill', skill.className]">
-            <img :src="skill.src" :alt="skill.title" />
-            <h3 x-text="skill.title" />
-          </div>
-        </template>
-      </div>
-    </section>
-
-    <!-- about -->
-    <article class="mt-16 text-center md:text-left md:flex">
-      <!-- avatar -->
-      <div class="flex-1">
-        <img
-          src="/image-amy.webp"
-          alt="avatar"
-          class="px-4 md:-ml-16 lg:ml-0 max-w-sm"
-        />
-      </div>
-
-      <div class="flex-1">
-        <h2 class="mt-8">I’m Amy, and I’d love to work on your next project</h2>
-
-        <p class="text-medium-brown mt-4">
-          I love working with others to create beautiful design solutions. I’ve
-          designed everything from brand illustrations to complete mobile apps.
-          I’m also handy with a camera!
-        </p>
-
-        <a :href="consult" class="button bg-light-red mt-4"
-          >Free Consultation</a
         >
-      </div>
-    </article>
+          <template x-for="skill in skills">
+            <div :class="['skill', skill.className]">
+              <img :src="skill.src" :alt="skill.title" />
+              <h3 x-text="skill.title" />
+            </div>
+          </template>
+        </div>
+      </section>
 
-    <!-- work -->
-    <section class="mt-24 text-center">
-      <h2>My Work</h2>
+      <!-- about -->
+      <article class="mt-16 text-center md:text-left md:flex">
+        <!-- avatar -->
+        <div class="flex-1">
+          <img
+            src="/image-amy.webp"
+            alt="avatar"
+            class="px-4 md:-ml-16 lg:ml-0 max-w-sm"
+          />
+        </div>
 
-      <!-- carousel -->
-      <div
-        class="overflow-hidden full-width mt-6 flex flex-col"
-        x-data="{
+        <div class="flex-1">
+          <h2 class="mt-8">
+            I’m Amy, and I’d love to work on your next project
+          </h2>
+
+          <p class="text-medium-brown mt-4">
+            I love working with others to create beautiful design solutions.
+            I’ve designed everything from brand illustrations to complete mobile
+            apps. I’m also handy with a camera!
+          </p>
+
+          <a :href="consult" class="button bg-light-red mt-4"
+            >Free Consultation</a
+          >
+        </div>
+      </article>
+
+      <!-- work -->
+      <section class="mt-24 text-center">
+        <h2>My Work</h2>
+
+        <!-- carousel -->
+        <div
+          class="overflow-hidden full-width mt-6 flex flex-col"
+          x-data="{
           _current: 0,
           get current() {
             return this._current;
@@ -261,75 +140,76 @@
             { src: '/image-slide-5.jpg', alt: 'slide 5' },
           ]
         }"
-      >
-        <div class="flex items-center flex-nowrap ml-[10vw] lg:ml-[30vw]">
-          <template x-for="slide in slides">
-            <div
-              class="flex-none transition"
-              :style="{ transform: `translateX(${current * -100}%)` }"
+        >
+          <div class="flex items-center flex-nowrap ml-[10vw] lg:ml-[30vw]">
+            <template x-for="slide in slides">
+              <div
+                class="flex-none transition"
+                :style="{ transform: `translateX(${current * -100}%)` }"
+              >
+                <img
+                  class="rounded-lg w-[80vw] mr-[5vw] lg:w-[40vw] lg:mr-[2vw]"
+                  :src="slide.src"
+                  :alt="slide.alt"
+                />
+              </div>
+            </template>
+          </div>
+
+          <div class="flex justify-center gap-4 mt-6">
+            <button
+              type="button"
+              class="button round bg-black"
+              aria-label="prev"
+              @click="current -= 1"
             >
-              <img
-                class="rounded-lg w-[80vw] mr-[5vw] lg:w-[40vw] lg:mr-[2vw]"
-                :src="slide.src"
-                :alt="slide.alt"
-              />
-            </div>
-          </template>
+              <img src="/arrow-l.svg" alt="prev" class="w-4" />
+            </button>
+
+            <button
+              type="button"
+              class="button round bg-black"
+              aria-label="next"
+              @click="current += 1"
+            >
+              <img src="/arrow-r.svg" alt="next" class="w-4" />
+            </button>
+          </div>
         </div>
+      </section>
 
-        <div class="flex justify-center gap-4 mt-6">
-          <button
-            type="button"
-            class="button round bg-black"
-            aria-label="prev"
-            @click="current -= 1"
-          >
-            <img src="/arrow-l.svg" alt="prev" class="w-4" />
-          </button>
+      <!-- contact -->
+      <section class="mt-24">
+        <div
+          class="rounded-lg px-8 py-12 bg-black text-center lg:text-left grid gap-4 lg:grid-cols-3"
+        >
+          <div class="col-span-2">
+            <h2>Book a call with me</h2>
 
-          <button
-            type="button"
-            class="button round bg-black"
-            aria-label="next"
-            @click="current += 1"
-          >
-            <img src="/arrow-r.svg" alt="next" class="w-4" />
-          </button>
+            <p class="mt-8 max-w-xl">
+              I’d love to have a chat to see how I can help you. The best first
+              step is for us to discuss your project during a free consultation.
+              Then we can move forward from there.
+            </p>
+          </div>
+
+          <div class="col-span-1 grid place-content-center">
+            <a :href="consult" class="mx-auto button bg-light-red"
+              >Free Consultation</a
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- contact -->
-    <section class="mt-24">
-      <div
-        class="rounded-lg px-8 py-12 bg-black text-center lg:text-left grid gap-4 lg:grid-cols-3"
-      >
-        <div class="col-span-2">
-          <h2>Book a call with me</h2>
-
-          <p class="mt-8 max-w-xl">
-            I’d love to have a chat to see how I can help you. The best first
-            step is for us to discuss your project during a free consultation.
-            Then we can move forward from there.
-          </p>
-        </div>
-
-        <div class="col-span-1 grid place-content-center">
-          <a :href="consult" class="mx-auto button bg-light-red"
-            >Free Consultation</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- footer -->
-    <footer class="flex justify-between py-4 md:py-8 mt-8">
-      <!-- logo -->
-      <a href="/" aria-label="Logo" class="w-12">
-        <img src="/logo.svg" alt="Logo" />
-      </a>
-      <!-- consult -->
-      <a :href="consult" class="button bg-black"> Free Consultation </a>
-    </footer>
+      <!-- footer -->
+      <footer class="flex justify-between py-4 md:py-8 mt-8">
+        <!-- logo -->
+        <a href="/" aria-label="Logo" class="w-12">
+          <img src="/logo.svg" alt="Logo" />
+        </a>
+        <!-- consult -->
+        <a :href="consult" class="button bg-black"> Free Consultation </a>
+      </footer>
+    </main>
   </body>
 </html>

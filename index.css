@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-light-cream text-black;
+    @apply md:text-lg;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  img {
+    @apply w-full h-auto;
+  }
+  h1 {
+    @apply text-4xl md:text-h-md lg:text-h-lg font-bold;
+  }
+  h2 {
+    @apply text-2xl font-bold md:text-h-sm lg:text-h-md;
+  }
+  main > * {
+    @apply px-4 md:px-8 lg:container mx-auto;
+  }
+}
+@layer components {
+  .button {
+    @apply inline-flex items-center px-8 py-2 rounded-4xl text-base font-bold;
+  }
+  .button.bg-black:hover {
+    @apply bg-galactic-blue;
+  }
+  .button.bg-light-red:hover {
+    @apply bg-summer-yellow;
+  }
+  .button.round {
+    @apply rounded-full aspect-square px-4 py-4;
+  }
+  .button.round:hover {
+    @apply bg-galactic-blue;
+  }
+
+  .skills {
+    @apply grid grid-cols-2 gap-4;
+
+    grid-template-areas:
+      "a a"
+      "b c"
+      "d d"
+      "e e"
+      "f f";
+  }
+  @media screen(md) {
+    .skills {
+      @apply grid-cols-4;
+      grid-template-areas:
+        "a a b c"
+        "a a d d"
+        "e e f f";
+    }
+  }
+  @media screen(lg) {
+    .skills {
+      @apply grid-cols-6;
+      grid-template-areas:
+        "a a b c e e"
+        "a a d d f f";
+    }
+  }
+
+  .skill {
+    @apply rounded-lg p-6 flex flex-col;
+  }
+  .skill img {
+    @apply w-1/2 ml-auto;
+  }
+  .skill h3 {
+    @apply font-bold text-2xl mt-auto;
+  }
+
+  .bg-black,
+  .bg-galactic-blue,
+  .bg-summer-yellow,
+  .bg-pink,
+  .bg-light-red,
+  .bg-cyan,
+  .bg-dark-purple {
+    @apply text-light-cream;
+  }
+}
+
+@layer utilities {
+  .full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
