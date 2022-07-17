@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 129 64">
+    <circle cx="112.913" cy="16" r="14" stroke="#FFF7F0" stroke-width="4"/>
+    <rect width="32" height="32" x="64.9126" fill="#755CDE"/>
+    <rect width="4" height="4" x="96.9126" y="32" fill="#030303"/>
+    <rect width="4" height="4" x="110.913" y="32" fill="#030303"/>
+    <rect width="4" height="4" x="124.913" y="32" fill="#030303"/>
+    <rect width="4" height="4" x="96.9126" y="46" fill="#030303"/>
+    <rect width="4" height="4" x="110.913" y="46" fill="#030303"/>
+    <rect width="4" height="4" x="124.913" y="46" fill="#030303"/>
+    <rect width="4" height="4" x="96.9126" y="60" fill="#030303"/>
+    <rect width="4" height="4" x="110.913" y="60" fill="#030303"/>
+    <rect width="4" height="4" x="124.913" y="60" fill="#030303"/>
+    <path fill="#F39E9E" fill-rule="evenodd" d="M64.9126 32L96.9126 64V32H64.9126Z" clip-rule="evenodd"/>
+    <rect width="4" height="4" x="32.9126" y="32" fill="#030303"/>
+    <rect width="4" height="4" x="46.9126" y="32" fill="#030303"/>
+    <rect width="4" height="4" x="60.9126" y="32" fill="#030303"/>
+    <rect width="4" height="4" x="32.9126" y="56" fill="#030303"/>
+    <rect width="4" height="4" x="46.9126" y="56" fill="#030303"/>
+    <rect width="4" height="4" x="60.9126" y="56" fill="#030303"/>
+    <rect width="4" height="4" x="32.9126" y="60" fill="#030303"/>
+    <rect width="4" height="4" x="46.9126" y="60" fill="#030303"/>
+    <rect width="4" height="4" x="60.9126" y="60" fill="#030303"/>
+    <rect width="4" height="4" x="32.9126" fill="#030303"/>
+    <rect width="4" height="4" x="46.9126" fill="#030303"/>
+    <rect width="4" height="4" x="60.9126" fill="#030303"/>
+    <rect width="4" height="4" x="32.9126" y="4" fill="#030303"/>
+    <rect width="4" height="4" x="46.9126" y="4" fill="#030303"/>
+    <rect width="4" height="4" x="60.9126" y="4" fill="#030303"/>
+    <rect width="4" height="4" x="32.9126" y="28" fill="#030303"/>
+    <rect width="4" height="4" x="46.9126" y="28" fill="#030303"/>
+    <rect width="4" height="4" x="60.9126" y="28" fill="#030303"/>
+    <path fill="#61C4B7" fill-rule="evenodd" d="M0.912598 32L32.9126 64V32H0.912598Z" clip-rule="evenodd"/>
+    <path fill="#FFF7F0" fill-rule="evenodd" d="M32.9126 0L0.912598 32V0H32.9126Z" clip-rule="evenodd"/>
+</svg>
